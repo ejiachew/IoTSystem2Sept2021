@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Smart Warehouse Monitoring System</string>
+
+    <string name="Temperature_Humidity">Temperature and Humidity Detection</string>
+    <string name="Intruder">Intruder Detection</string>
+    <string name="Corridor_Light">Corridor Lighting Control</string>
+    <string name="MachineMonitoring">Machine Monitoring</string>
+
+    <string name="currentLightLevel">Light Intensity</string>
+    <string name="simulator">Simulator</string>
+    <string name="devices">Light Devices</string>
+    <string name="lightSensor">Light Sensor</string>
+
+    <string name="frontDoorLight">Front Door Light</string>
+    <string name="backDoorLight">Back Door Light</string>
+
+    <string name="morning">Day Time</string>
+    <string name="sunnyDay">Sunny Day</string>
+    <string name="rainyDay">Rainy Day</string>
+    <string name="night">Night Time</string>
+
+</resources>

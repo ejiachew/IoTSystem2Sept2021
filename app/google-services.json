@@ -1,0 +1,185 @@
+{
+  "project_info": {
+    "project_number": "208598589993",
+    "firebase_url": "https://bait2123-202105-13-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "bait2123-202105-13",
+    "storage_bucket": "bait2123-202105-13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208598589993:android:310cf41cc1553864eaf238",
+        "android_client_info": {
+          "package_name": "com.example.homecaretesting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208598589993-0ia3bfbd42atu5q2i04capd3pq087jrg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcnbhNBpG5II7V0PoD1hA-5fXZO4lkYPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208598589993-0ia3bfbd42atu5q2i04capd3pq087jrg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208598589993:android:587037159846802feaf238",
+        "android_client_info": {
+          "package_name": "com.example.iotsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208598589993-0ia3bfbd42atu5q2i04capd3pq087jrg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcnbhNBpG5II7V0PoD1hA-5fXZO4lkYPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208598589993-0ia3bfbd42atu5q2i04capd3pq087jrg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208598589993:android:af6d574b8e2c3a45eaf238",
+        "android_client_info": {
+          "package_name": "com.example.smartpantry"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208598589993-0ia3bfbd42atu5q2i04capd3pq087jrg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcnbhNBpG5II7V0PoD1hA-5fXZO4lkYPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208598589993-0ia3bfbd42atu5q2i04capd3pq087jrg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208598589993:android:9311b31f39b95871eaf238",
+        "android_client_info": {
+          "package_name": "my.com.smartparking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208598589993-0ia3bfbd42atu5q2i04capd3pq087jrg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcnbhNBpG5II7V0PoD1hA-5fXZO4lkYPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208598589993-0ia3bfbd42atu5q2i04capd3pq087jrg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208598589993:android:5eb3712866dc544ceaf238",
+        "android_client_info": {
+          "package_name": "my.edu.tarc.bait2123"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208598589993-0ia3bfbd42atu5q2i04capd3pq087jrg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcnbhNBpG5II7V0PoD1hA-5fXZO4lkYPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208598589993-0ia3bfbd42atu5q2i04capd3pq087jrg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208598589993:android:4f1697522d608afceaf238",
+        "android_client_info": {
+          "package_name": "my.edu.tarc.smarthomesystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208598589993-0ia3bfbd42atu5q2i04capd3pq087jrg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcnbhNBpG5II7V0PoD1hA-5fXZO4lkYPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208598589993-0ia3bfbd42atu5q2i04capd3pq087jrg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
