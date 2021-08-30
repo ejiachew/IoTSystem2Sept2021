@@ -1,14 +1,16 @@
 <resources>
     <string name="app_name">Smart Warehouse Monitoring System</string>
 
+    // Main Dashboard
     <string name="Temperature_Humidity">Temperature and Humidity Detection</string>
     <string name="Intruder">Intruder Detection</string>
-    <string name="Corridor_Light">Corridor Lighting Control</string>
+    <string name="Corridor_Light">Automation Lighting Control</string>
     <string name="MachineMonitoring">Machine Monitoring</string>
 
+    // Automation Light Control
     <string name="currentLightLevel">Light Intensity</string>
-    <string name="simulator">Simulator</string>
-    <string name="devices">Light Devices</string>
+    <string name="simulator">Automation Light Control</string>
+    <string name="devices">Devices</string>
     <string name="lightSensor">Light Sensor</string>
 
     <string name="frontDoorLight">Front Door Light</string>
@@ -18,5 +20,25 @@
     <string name="sunnyDay">Sunny Day</string>
     <string name="rainyDay">Rainy Day</string>
     <string name="night">Night Time</string>
+
+    <string name="loading">Loading...</string>
+
+    <string name="sunrise">Sunrise</string>
+    <string name="sunset">Sunset</string>
+
+    <string name="lux">Lux</string>
+
+    // Machine Monitoring
+    <string name="machineTemperature">Temperature Monitoring</string>
+    <string name="machineDevice">Packaging Machine 01</string>
+    <string name="temperatureReading">Temperature Value for Machine 01</string>
+    <string name="machines">Machines</string>
+    <string name="alert">Alert</string>
+    <string name="noRemark">Normal Temperature</string>
+    <string name="machineStatus">On</string>
+    <string name="machineCamera">Camera 01</string>
+    <string name="liveCamera">Live Camera</string>
+    <string name="cameraIdle">Idle</string>
+    <string name="capture">Capture</string>
 
 </resources>

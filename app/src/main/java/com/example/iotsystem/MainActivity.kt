@@ -19,5 +19,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.cvMachine.setOnClickListener(){
+            val intent = Intent(this@MainActivity, MachineMonitor::class.java)
+            startActivity(intent)
+        }
+
     }
 }
