@@ -7,19 +7,16 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Build
-import android.os.Build.VERSION_CODES
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import cn.pedant.SweetAlert.SweetAlertDialog
-import com.example.iotsystem.databinding.ActivityMachineMonitorBinding
+import com.example.iotsystem.databinding.ActivityMainFireDetectionBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -34,101 +31,57 @@ import java.io.File
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class MachineMonitor : AppCompatActivity() {
+class MainFireDetection : AppCompatActivity() {
 
-    private lateinit var binding : ActivityMachineMonitorBinding
+    private val channel_ID="channel_id_example_01"
+    private val notificationID=101
+
+    private lateinit var binding : ActivityMainFireDetectionBinding
 
     private lateinit var repeater : Job
 
     private lateinit var database: DatabaseReference
-    @RequiresApi(VERSION_CODES.O)
+    @RequiresApi(Build.VERSION_CODES.O)
     private val dtf = DateTimeFormatter.ofPattern("yyyyMMdd")
-    @RequiresApi(VERSION_CODES.O)
+    @RequiresApi(Build.VERSION_CODES.O)
     private val hourDTF = DateTimeFormatter.ofPattern("HH")
-    @RequiresApi(VERSION_CODES.O)
+    @RequiresApi(Build.VERSION_CODES.O)
     private val minuteDTF = DateTimeFormatter.ofPattern("mm")
-    @RequiresApi(VERSION_CODES.O)
+    @RequiresApi(Build.VERSION_CODES.O)
     private val secondDTF = DateTimeFormatter.ofPattern("ss")
 
     private lateinit var mStorageReference: StorageReference
 
-    var isMachineOn = true
-    var overTemperature = false
-
-    private val channel_ID = "channel_id_example_01"
-    private val notificationID = 109
-
-    var smartControlEnable = false
-    var currentTempValue = 0.00
     var isNullDetected = false
-
 
     @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_machine_monitor)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main_fire_detection)
 
         database = Firebase.database.reference
         val database = Firebase.database
-        createNotificationChannel()
 
-        val relay1Ref = database.getReference("PI_13__CONTROL").child("relay1")
+        createNotificationChannel()
         val cameraRef = database.getReference("PI_13__CONTROL").child("camera")
         val cameraFeedbackRef = database.getReference("PI_13__CONTROL").child("camera_feedback")
 
         binding.imgBtnBack.setOnClickListener(){
-            val intent = Intent(this@MachineMonitor, MainActivity::class.java)
+            val intent = Intent(this@MainFireDetection, MainActivity::class.java)
             finish()
             startActivity(intent)
         }
 
-        binding.swMachine.setOnCheckedChangeListener { _, isChecked ->
-            if(isChecked){
-                if(overTemperature){
-                    SweetAlertDialog(this,SweetAlertDialog.WARNING_TYPE)
-                        .setTitleText("Machine Over Temperature")
-                        .setContentText("It will turn on automatically once the temperature is back to normal")
-                        .show()
-                    binding.swMachine.isChecked = false
-                }else{
-                    relay1Ref.setValue("1")
-                }
-            }else{
-                relay1Ref.setValue("0")
-            }
+        binding.imgBtnBack.setOnClickListener{
+            val intent = Intent(this@MainFireDetection, MainActivity::class.java)
+            finish()
+            startActivity(intent)
         }
-
-        binding.swTempControl.setOnCheckedChangeListener { _, isChecked ->
-            smartControlEnable = isChecked
-        }
-
-        // get instantly update
-        relay1Ref.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                if(dataSnapshot.getValue<String>() == "1"){
-                    binding.tvMachineStatus.text = "On"
-                    binding.swMachine.isChecked = true
-                    isMachineOn = true
-                }else{
-                    binding.tvMachineStatus.text = "Off"
-                    binding.swMachine.isChecked = false
-                    isMachineOn = false
-                }
-                Log.i("infoTag",dataSnapshot.getValue<String>().toString())
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                // Failed to read value
-                Log.i("infoTag", "Failed to read value.", error.toException())
-            }
-        })
 
         binding.btnCamera.setOnClickListener(){
             cameraRef.setValue("1")
             SweetAlertDialog(this,SweetAlertDialog.SUCCESS_TYPE)
-                .setTitleText("Image Capturing")
+                .setTitleText("Capturing Image")
                 .setContentText("Please wait for few seconds")
                 .show()
         }
@@ -160,7 +113,7 @@ class MachineMonitor : AppCompatActivity() {
                     var filePath = cameraFeedback?.substring(9,31)
                     if (filePath != null) {
 
-                        val progressDialog = ProgressDialog(this@MachineMonitor)
+                        val progressDialog = ProgressDialog(this@MainFireDetection)
                         progressDialog.setMessage("Fetching Image...")
                         progressDialog.setCancelable(false)
                         progressDialog.show()
@@ -195,7 +148,7 @@ class MachineMonitor : AppCompatActivity() {
 
     }
 
-    @RequiresApi(VERSION_CODES.O)
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onResume() {
         super.onResume()
 
@@ -208,7 +161,7 @@ class MachineMonitor : AppCompatActivity() {
         repeater.cancel()
     }
 
-    @RequiresApi(VERSION_CODES.O)
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun repeatFun(): Job {
         return CoroutineScope(Dispatchers.IO).launch {
             while(isActive) {
@@ -218,11 +171,7 @@ class MachineMonitor : AppCompatActivity() {
         }
     }
 
-
-    var isAlertDisplayError = false
-    var isAlertDisplayWarning = false
-
-    @RequiresApi(VERSION_CODES.O)
+    @RequiresApi(Build.VERSION_CODES.O)
     fun getData(){
         val now = LocalDateTime.now()
         var todayDate = dtf.format(now)
@@ -230,22 +179,25 @@ class MachineMonitor : AppCompatActivity() {
         var currentMin = minuteDTF.format(now).toString()
         var currentSec = secondDTF.format(now).toString().toInt()
 
+
         if(currentSec % 10 == 0) {
             database = Firebase.database.reference
 
             val database = Firebase.database
+            val relay1Ref = database.getReference("PI_13__CONTROL").child("relay1")
+            val buzzerRef = database.getReference("PI_13__CONTROL").child("buzzer")
             database.getReference("PI_13__${todayDate}").child(currentHour)
                 .child(currentMin + String.format("%02d",currentSec)).get().addOnSuccessListener { snap ->
-                    //binding.tvMachineTemp.text = snap.child("rand2").getValue<String>() + "°C"
-                    binding.tvMachineTemp.textSize = 20F
-
+                    //binding.tvTemp.text = snap.child("rand1").getValue<String>() + "°C"
+                    binding.tvTemp.textSize = 20F
+                    val temp=binding.txtTriggerTemp.text.toString().toDouble()
                     val lcdRef = database.getReference("PI_13__CONTROL").child("lcdtxt")
-                    val relay1Ref = database.getReference("PI_13__CONTROL").child("relay1")
 
-                    var tempValue = snap.child("rand2").getValue<String>()?.toDouble()
+                    //var tempValue = snap.child("rand1").getValue<String>().toString().toDouble()
+                    var tempValue = snap.child("rand1").getValue<String>()?.toDouble()
 
                     if(tempValue != null){
-                        binding.tvMachineTemp.text = snap.child("rand2").getValue<String>() + "°C"
+                        binding.tvTemp.text = snap.child("rand1").getValue<String>() + "°C"
                     }else{
                         isNullDetected = true
                         Log.i("newTag","Null Detected : $tempValue")
@@ -259,117 +211,52 @@ class MachineMonitor : AppCompatActivity() {
                     }
 
 
-                    if(smartControlEnable){
-                        if (tempValue != null) {
-                            if(tempValue > 750){
-                                binding.tvAlertRemark.text = "Over Temperature"
-                                binding.imageViewAlert.setImageResource(R.drawable.alert)
-                                lcdRef.setValue("Over Temperature")
-
-                                relay1Ref.setValue("0")
-
-                                if(!isAlertDisplayError && isMachineOn){
-                                    SweetAlertDialog(this,SweetAlertDialog.ERROR_TYPE)
-                                        .setTitleText("Machine Shutdown")
-                                        .setContentText("It will be turn on again once the temperature is back to normal")
-                                        .show()
-                                    isMachineOn = false
-                                    isAlertDisplayError = true
-                                    overTemperature = true
-                                    sendNotification("Machine temperature is too high, so the machine is turn off now")
-                                }
-
-                            }else if(tempValue > 500 && tempValue <= 750){
-                                binding.tvAlertRemark.text = "High Temperature"
-                                binding.imageViewAlert.setImageResource(R.drawable.warning)
-                                lcdRef.setValue("High Temperature")
-
-
-                                if(!isAlertDisplayWarning && isMachineOn){
-                                    SweetAlertDialog(this,SweetAlertDialog.WARNING_TYPE)
-                                        .setTitleText("High Temperature")
-                                        .setContentText("It will be turn off once the temperature is over")
-                                        .show()
-                                    isAlertDisplayWarning = true
-                                    sendNotification("Machine temperature is quite high, it will be turn off once the temperature is over")
-                                }
-                            }else{
-                                binding.tvAlertRemark.text = "Normal Temperature"
-                                binding.imageViewAlert.setImageResource(R.drawable.bell)
-                                lcdRef.setValue("==Normal Temp!==")
-
-                                if(!isMachineOn){
-
-                                    relay1Ref.setValue("1")
-
-                                    SweetAlertDialog(this,SweetAlertDialog.SUCCESS_TYPE)
-                                        .setTitleText("Machine Turn On")
-                                        .setContentText("The machine temperature is back to normal")
-                                        .show()
-                                    isMachineOn = true
-                                    overTemperature = false
-                                }
-                            }
+                    if (tempValue != null) {
+                        if(tempValue > temp){
+                            binding.tvAlertRemark.text = "Fire detected, fire alarm and sprinkles has been triggered"
+                            binding.imageViewAlert.setImageResource(R.drawable.alert)
+                            lcdRef.setValue("=Fire detected!=")
+                            relay1Ref.setValue("1")
+                            buzzerRef.setValue("1")
+                            sendNotification()
+                        }else{
+                            binding.tvAlertRemark.text = "There is no fire detected."
+                            binding.imageViewAlert.setImageResource(R.drawable.bell)
+                            relay1Ref.setValue("0")
+                            buzzerRef.setValue("0")
+                            lcdRef.setValue("=Temperature Ok=")
                         }
                     }
-
-
                 }
         }else{
             Log.i("newTag",currentSec.toString())
         }
     }
 
-
     private fun createNotificationChannel(){
         if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.O){
-            val name ="Machine Temperature Detection"
-            val descriptionText="Machine temperature is too high, so the machine is turn off now"
-            val importance= NotificationManager.IMPORTANCE_DEFAULT
-            val channel= NotificationChannel(channel_ID,name,importance).apply {
+            val name ="Fire detection"
+            val descriptionText="There is a fire detect in the warehouse!!!"
+            val importance=NotificationManager.IMPORTANCE_DEFAULT
+            val channel=NotificationChannel(channel_ID,name,importance).apply {
                 description=descriptionText
             }
 
-            val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val notificationManager: NotificationManager= getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
+
         }
     }
 
-    private fun sendNotification(contentText : String){
+    private fun sendNotification(){
         val builder = NotificationCompat.Builder(this, channel_ID)
             .setSmallIcon(R.drawable.alert)
-            .setContentTitle("Machine Temperature Detection")
-            .setContentText(contentText)
+            .setContentTitle("Fire alert")
+            .setContentText("There is a fire detect in the warehouse!!!")
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
         with(NotificationManagerCompat.from(this)){
             notify(notificationID,builder.build())
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

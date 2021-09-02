@@ -5,7 +5,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MachineMonitor">
+        tools:context=".IntruderDetection">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/topToolbar"
@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/MachineMonitoring"
+            android:text="Intruder Detection"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -49,106 +49,117 @@
             app:srcCompat="@drawable/left_arrow" />
 
         <TextView
-            android:id="@+id/tvMachineTemperature"
+            android:id="@+id/tvSoundAndDistance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/machineTemperature"
+            android:text="Sound and Distance Detection"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.074"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout_row_2" />
+            app:layout_constraintTop_toBottomOf="@+id/topToolbar" />
 
         <LinearLayout
             android:id="@+id/linearLayout_row_1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="5dp"
+            android:padding="3dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvMachineTemperature">
+            app:layout_constraintTop_toBottomOf="@+id/tvSoundAndDistance">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/card123"
+                android:id="@+id/cardSound"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="8dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp">
+                    android:layout_height="60dp">
 
                     <ImageView
-                        android:id="@+id/imageView_Temperature"
+                        android:id="@+id/imgView_Sound"
                         android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_height="30dp"
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="15dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/temp_humidity" />
+                        app:srcCompat="@drawable/ic_sound" />
 
 
                     <TextView
-                        android:id="@+id/tvMachineTemp"
+                        android:id="@+id/tvSoundValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:text="@string/loading"
+                        android:layout_marginStart="12dp"
+                        android:text="Loading"
                         android:textColor="@color/black"
                         android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView_Temperature"
-                        app:layout_constraintStart_toEndOf="@+id/imageView_Temperature"
-                        app:layout_constraintTop_toTopOf="@+id/imageView_Temperature"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgView_Sound"
+                        app:layout_constraintStart_toEndOf="@+id/imgView_Sound"
+                        app:layout_constraintTop_toTopOf="@+id/imgView_Sound"
                         app:layout_constraintVertical_bias="0.535" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardAlert"
+                android:id="@+id/cardDistance"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="8dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp">
+                    android:layout_height="60dp">
 
                     <ImageView
-                        android:id="@+id/imageView_Alert"
+                        android:id="@+id/imgView_Distance"
                         android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_height="30dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/bell" />
+                        app:srcCompat="@drawable/ic_distance" />
 
 
                     <TextView
-                        android:id="@+id/tvAlertRemark"
-                        android:layout_width="97dp"
+                        android:id="@+id/tvDistanceValue"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:text="@string/noRemark"
+                        android:layout_marginStart="12dp"
+                        android:text="2.0"
                         android:textColor="@color/black"
-                        android:textSize="14sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView_Alert"
-                        app:layout_constraintStart_toEndOf="@+id/imageView_Alert"
-                        app:layout_constraintTop_toTopOf="@+id/imageView_Alert"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgView_Distance"
+                        app:layout_constraintStart_toEndOf="@+id/imgView_Distance"
+                        app:layout_constraintTop_toTopOf="@+id/imgView_Distance"
                         app:layout_constraintVertical_bias="0.545" />
+
+                    <SeekBar
+                        android:id="@+id/seekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:max="200"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imgView_Distance" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
@@ -166,41 +177,41 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvRemoteMachine">
+            app:layout_constraintTop_toBottomOf="@+id/tvIntruderDetection">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardMachine"
+                android:id="@+id/cardSwitch"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="8dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="60dp">
 
                     <ImageView
                         android:id="@+id/imageView_Machine"
                         android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_height="40dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/machine" />
+                        app:srcCompat="@drawable/ic_motion_sensor" />
 
                     <TextView
                         android:id="@+id/tvMachine"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="0dp"
                         android:fontFamily="@font/montserrat"
-                        android:text="@string/machineDevice"
+                        android:text="Switch"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="15sp"
@@ -209,13 +220,13 @@
                         app:layout_constraintTop_toTopOf="@+id/imageView_Machine" />
 
                     <TextView
-                        android:id="@+id/tvMachineStatus"
+                        android:id="@+id/tvSwitchStatus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
                         android:fontFamily="@font/montserrat"
-                        android:text="@string/loading"
+                        android:text="Off"
                         android:textAlignment="center"
                         android:textColor="@color/colorPrimary"
                         android:textSize="15sp"
@@ -228,12 +239,11 @@
                         app:layout_constraintVertical_bias="0.25" />
 
                     <Switch
-                        android:id="@+id/swMachine"
+                        android:id="@+id/swIntruderDetection"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_marginEnd="4dp"
-                        android:theme="@style/SwitchColor"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
@@ -245,36 +255,187 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tvRemoteMachine"
+            android:id="@+id/tvIntruderDetection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/machines"
+            android:layout_marginTop="5dp"
+            android:text="Intruder Detection"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/topToolbar" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout_row_1" />
 
         <TextView
             android:id="@+id/tvCamera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="324dp"
+            android:text="Live Camera"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:text="@string/liveCamera"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout_row_1" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout_row_3" />
+
+
+        <TextView
+            android:id="@+id/tvAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="324dp"
+            android:text="Alert"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout_row_2" />/>
 
         <LinearLayout
             android:id="@+id/linearLayout_row_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAlert">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardAlert"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+
+                    <ImageView
+                        android:id="@+id/imgView_Alarm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_alert" />
+
+
+
+                    <TextView
+                        android:id="@+id/tvAlarm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="0dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Alarm"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/imgView_Alarm"
+                        app:layout_constraintTop_toTopOf="@+id/imgView_Alarm" />
+
+                    <TextView
+                        android:id="@+id/tvAlarmValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Off"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/tvAlarm"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvAlarm"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAlarm" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardMessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+
+                    <ImageView
+                        android:id="@+id/imgView_Message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_message" />
+
+
+                    <TextView
+                        android:id="@+id/tvMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="0dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Message"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/imgView_Message"
+                        app:layout_constraintTop_toTopOf="@+id/imgView_Message" />
+
+                    <TextView
+                        android:id="@+id/tvMessageValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="None"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/tvMessage"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvMessage"
+                        app:layout_constraintTop_toBottomOf="@+id/tvMessage" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout_row_4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -288,7 +449,7 @@
                 android:id="@+id/cardCamera"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="8dp">
@@ -298,9 +459,9 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:id="@+id/imageView_Camera"
+                        android:id="@+id/imgView_Camera"
                         android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_height="50dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
@@ -314,24 +475,24 @@
                         android:id="@+id/tvCameraMonitor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="0dp"
                         android:fontFamily="@font/montserrat"
-                        android:text="@string/machineCamera"
+                        android:text="Camera"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="15sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toEndOf="@+id/imageView_Camera"
-                        app:layout_constraintTop_toTopOf="@+id/imageView_Camera" />
+                        app:layout_constraintStart_toEndOf="@+id/imgView_Camera"
+                        app:layout_constraintTop_toTopOf="@+id/imgView_Camera" />
 
                     <TextView
                         android:id="@+id/tvCameraStatus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="5dp"
                         android:fontFamily="@font/montserrat"
-                        android:text="@string/loading"
+                        android:text="Loading"
                         android:textAlignment="center"
                         android:textColor="@color/colorPrimary"
                         android:textSize="15sp"
@@ -345,7 +506,7 @@
                         android:id="@+id/btnCamera"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="36dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="16dp"
                         android:backgroundTint="@color/colorPrimary"
                         android:padding="0dp"
@@ -353,7 +514,7 @@
                         android:paddingTop="0dp"
                         android:paddingRight="0dp"
                         android:paddingBottom="0dp"
-                        android:text="@string/capture"
+                        android:text="Capture"
                         android:textColor="@color/white"
                         android:textSize="12sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -361,17 +522,16 @@
 
                     <ImageView
                         android:id="@+id/imgCaptured"
-                        android:layout_width="350dp"
-                        android:layout_height="180dp"
+                        android:layout_width="300dp"
+                        android:layout_height="170dp"
                         android:layout_marginTop="30dp"
                         android:layout_marginBottom="15dp"
                         android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.483"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvCameraStatus"
-                        app:layout_constraintVertical_bias="0.886"
+                        app:layout_constraintVertical_bias="0.0"
                         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
 
@@ -381,14 +541,7 @@
 
         </LinearLayout>
 
-        <Switch
-            android:id="@+id/swTempControl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout_row_2" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

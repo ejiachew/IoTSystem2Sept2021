@@ -13,6 +13,15 @@
         android:theme="@style/Theme.IoTSystem"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".IntruderDetection"
+            android:exported="true" />
+        <activity
+            android:name=".Temperature_Humidity"
+            android:exported="true" />
+        <activity
+            android:name=".MainFireDetection"
+            android:exported="true" />
+        <activity
             android:name=".MachineMonitor"
             android:exported="true" />
         <activity

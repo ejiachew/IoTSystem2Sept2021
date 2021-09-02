@@ -6,12 +6,13 @@
     <string name="Intruder">Intruder Detection</string>
     <string name="Corridor_Light">Automation Lighting Control</string>
     <string name="MachineMonitoring">Machine Monitoring</string>
+    <string name="fireDetection">Fire Detection</string>
 
     // Automation Light Control
     <string name="currentLightLevel">Light Intensity</string>
     <string name="simulator">Automation Light Control</string>
-    <string name="devices">Devices</string>
-    <string name="lightSensor">Light Sensor</string>
+    <string name="devices">Remote Control Devices</string>
+    <string name="lightSensor">Smart Control by Light Sensor</string>
 
     <string name="frontDoorLight">Front Door Light</string>
     <string name="backDoorLight">Back Door Light</string>
@@ -27,12 +28,18 @@
     <string name="sunset">Sunset</string>
 
     <string name="lux">Lux</string>
+    <string name="remark">According to OpenWeatherMap</string>
+    <string name="turnOn">Turn On at</string>
+    <string name="turnOff">Turn Off at</string>
+    <string name="sunTitle">Based on Sunrise and Sunset</string>
+    <string name="timerTitle">Based on time configured</string>
+    <string name="timerConfigure">Configure</string>
 
     // Machine Monitoring
     <string name="machineTemperature">Temperature Monitoring</string>
     <string name="machineDevice">Packaging Machine 01</string>
     <string name="temperatureReading">Temperature Value for Machine 01</string>
-    <string name="machines">Machines</string>
+    <string name="machines">Remote Control Machines</string>
     <string name="alert">Alert</string>
     <string name="noRemark">Normal Temperature</string>
     <string name="machineStatus">On</string>

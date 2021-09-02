@@ -6,16 +6,31 @@
         <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />
         <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/alert.xml" value="0.3828125" />
         <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/bell.xml" value="0.3828125" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/ic_air_conditioner.xml" value="0.21458333333333332" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/ic_alert.xml" value="0.3828125" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/ic_dehumidifier.xml" value="0.21458333333333332" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/ic_distance.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/ic_humidity.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3828125" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/ic_message.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/ic_motion_sensor.xml" value="0.3828125" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/ic_sound.xml" value="0.3828125" />
         <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/info.xml" value="0.3828125" />
         <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/left_arrow.xml" value="0.3828125" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/smart_home.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/temp_humidity.xml" value="0.3828125" />
         <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/warehouse.xml" value="0.3828125" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/warehouse_background.xml" value="0.3828125" />
         <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/warning.xml" value="0.3828125" />
         <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/drawable/wave.xml" value="0.3828125" />
-        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/layout/activity_corridor_light_control.xml" value="0.25" />
-        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/layout/activity_machine_monitor.xml" value="0.33" />
-        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/layout/activity_corridor_light_control.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/layout/activity_intruder_detection.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/layout/activity_machine_monitor.xml" value="0.67" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/layout/activity_main_fire_detection.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/layout/activity_temperature_humidity.xml" value="0.5842323651452282" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/mipmap-anydpi-v26/warehouse.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/mipmap-anydpi-v26/warehouse_round.xml" value="0.22135416666666666" />
       </map>
     </option>
   </component>

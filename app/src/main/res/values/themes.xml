@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.IoTSystem" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -13,5 +13,9 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <item name="android:fontFamily">@font/montserrat</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="SwitchColor">
+        <item name="colorControlActivated">@color/colorPrimary</item>
     </style>
 </resources>

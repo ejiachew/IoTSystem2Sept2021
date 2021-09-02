@@ -2,6 +2,7 @@
 <layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -48,85 +49,7 @@
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/left_arrow" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout_row_1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="5dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLightSensor">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card123"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="8dp">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp">
-
-                    <ImageView
-                        android:id="@+id/imageView_CorridorLight"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/light_sensor" />
-
-                    <TextView
-                        android:id="@+id/tvCorridorLight"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/montserrat"
-                        android:text="@string/currentLightLevel"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toEndOf="@+id/imageView_CorridorLight"
-                        app:layout_constraintTop_toTopOf="@+id/imageView_CorridorLight" />
-
-                    <TextView
-                        android:id="@+id/tvLightLevel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/loading"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="36sp"
-                        app:layout_constraintEnd_toEndOf="@+id/tvCorridorLight"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/tvCorridorLight"
-                        app:layout_constraintTop_toBottomOf="@+id/tvCorridorLight" />
-
-                    <TextView
-                        android:id="@+id/tvLux"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/lux"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:visibility="invisible"
-                        app:layout_constraintBottom_toBottomOf="@+id/tvLightLevel"
-                        app:layout_constraintStart_toEndOf="@+id/tvLightLevel"
-                        app:layout_constraintTop_toTopOf="@+id/tvLightLevel"
-                        app:layout_constraintVertical_bias="1.0" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-
-        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout_row_2"
@@ -195,11 +118,13 @@
 
                     <Switch
                         android:id="@+id/swFrontDoorLight"
+                        style="@style/SwitchColor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_marginEnd="4dp"
-                        android:checked="true"
+                        android:checked="false"
+                        android:theme="@style/SwitchColor"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -265,7 +190,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_marginEnd="4dp"
-                        android:checked="true"
+                        android:checked="false"
+                        android:theme="@style/SwitchColor"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -273,20 +199,6 @@
 
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/tvDevices"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/devices"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.052"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout_row_1" />
 
         <TextView
             android:id="@+id/tvLightSensor"
@@ -300,10 +212,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.045"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topToolbar" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout_row_2" />
 
         <LinearLayout
-            android:id="@+id/linearLayout_row_3"
+            android:id="@+id/linearLayout_row_1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -311,8 +223,101 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSimulator"
-            android:visibility="visible">
+            app:layout_constraintTop_toBottomOf="@+id/tvLightSensor">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card123"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp">
+
+                    <ImageView
+                        android:id="@+id/imageView_CorridorLight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/light_sensor" />
+
+                    <TextView
+                        android:id="@+id/tvCorridorLight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/currentLightLevel"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/imageView_CorridorLight"
+                        app:layout_constraintTop_toTopOf="@+id/imageView_CorridorLight" />
+
+                    <TextView
+                        android:id="@+id/tvLightLevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/loading"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="36sp"
+                        app:layout_constraintEnd_toEndOf="@+id/tvCorridorLight"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvCorridorLight"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCorridorLight" />
+
+                    <Switch
+                        android:id="@+id/swSmartControl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tvDevices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/devices"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.052"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topToolbar" />
+
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout_row_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSimulator">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_simulation"
@@ -372,6 +377,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_marginEnd="4dp"
+                        android:theme="@style/SwitchColor"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -403,15 +409,29 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="80dp">
+                    android:layout_height="100dp">
 
+
+                    <TextView
+                        android:id="@+id/tvSunriseTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text=""
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/tvSunrise_Movement"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvSunrise_Movement"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSunrise_Movement" />
 
                     <ImageView
                         android:id="@+id/imgSimulator_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="36dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_chainStyle="packed"
@@ -430,20 +450,6 @@
                         app:layout_constraintStart_toEndOf="@+id/imgSimulator_2"
                         app:layout_constraintTop_toTopOf="@+id/imgSimulator_2" />
 
-                    <TextView
-                        android:id="@+id/tvSunriseTime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:text=""
-                        app:layout_constraintEnd_toEndOf="@+id/tvSunrise_Movement"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/tvSunrise_Movement"
-                        app:layout_constraintTop_toBottomOf="@+id/tvSunrise_Movement" />
-
                     <ImageView
                         android:id="@+id/imageView"
                         android:layout_width="wrap_content"
@@ -452,7 +458,7 @@
                         app:layout_constraintBottom_toBottomOf="@+id/imgSimulator_2"
                         app:layout_constraintStart_toEndOf="@+id/imgSimulator_2"
                         app:layout_constraintTop_toTopOf="@+id/imgSimulator_2"
-                        app:layout_constraintVertical_bias="0.0"
+                        app:layout_constraintVertical_bias="1.0"
                         app:srcCompat="@drawable/sunsets" />
 
                     <TextView
@@ -461,10 +467,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
+                        android:text="@string/sunset"
                         android:textColor="@color/black"
                         android:textSize="12sp"
                         android:textStyle="bold"
-                        android:text="@string/sunset"
                         app:layout_constraintStart_toEndOf="@+id/imageView"
                         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
@@ -473,10 +479,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
+                        android:text=""
                         android:textColor="@color/colorPrimary"
                         android:textSize="15sp"
                         android:textStyle="bold"
-                        android:text=""
                         app:layout_constraintEnd_toEndOf="@+id/textView2"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="@+id/textView2"
@@ -488,8 +494,146 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_marginEnd="4dp"
+                        android:theme="@style/SwitchColor"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_SunTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/sunTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout_row_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout_row_4">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_simulation3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp">
+
+                    <ImageView
+                        android:id="@+id/imageview_TimerLight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="36dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/light" />
+
+                    <Switch
+                        android:id="@+id/swTimerControl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:theme="@style/SwitchColor"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_TurnOn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/turnOn"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/imageview_TimerLight"
+                        app:layout_constraintTop_toTopOf="@+id/imageview_TimerLight" />
+
+                    <TextView
+                        android:id="@+id/tv_TurnOff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/turnOff"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_TurnOn"
+                        app:layout_constraintStart_toEndOf="@+id/tv_TurnOn"
+                        app:layout_constraintTop_toTopOf="@+id/tv_TurnOn"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/tv_TurnOnTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_TurnOn"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tv_TurnOn"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_TurnOn" />
+
+                    <TextView
+                        android:id="@+id/tv_turnOffTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_TurnOff"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tv_TurnOff"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_TurnOff" />
+
+                    <TextView
+                        android:id="@+id/tvTimerControlTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/timerTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/btnTimerConfigure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="@string/timerConfigure"
+                        android:textSize="10sp"
+                        android:backgroundTint="@color/colorPrimary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/swTimerControl" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
@@ -509,7 +653,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.077"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout_row_2" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout_row_1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

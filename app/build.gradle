@@ -53,4 +53,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.9.1'
 
     implementation 'org.jetbrains.anko:anko-common:0.9'
+
+    // Sweet Alert
+    implementation 'com.github.f0ris.sweetalert:library:1.5.6'
 }
