@@ -31,10 +31,12 @@
         <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/layout/activity_temperature_humidity.xml" value="0.5842323651452282" />
         <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/mipmap-anydpi-v26/warehouse.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/Admin/Desktop/Sunny Laptop/BAIT 2123_IoT/Assignment/Smart Warehouse Monitoring System/app/src/main/res/mipmap-anydpi-v26/warehouse_round.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Nicholas/AndroidStudioProjects/IoTSystem2Sept2021/app/src/main/res/layout/activity_main_fire_detection.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Nicholas/AndroidStudioProjects/IoTSystem2Sept2021/app/src/main/res/layout/activity_temperature_humidity.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

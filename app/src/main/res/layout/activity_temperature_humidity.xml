@@ -318,8 +318,8 @@
 
                         <Switch
                             android:id="@+id/switch_aircond"
-                            android:layout_width="174dp"
-                            android:layout_height="43dp"
+                            android:layout_width="150dp"
+                            android:layout_height="42dp"
                             android:layout_marginStart="2dp"
                             android:layout_marginTop="4dp"
                             android:fontFamily="@font/montserrat"

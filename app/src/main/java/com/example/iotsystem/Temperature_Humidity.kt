@@ -97,7 +97,7 @@ class Temperature_Humidity : AppCompatActivity() {
             builder.setTitle("Smart Control")
 
             //set content area
-            builder.setMessage("Enable Smart Control to turn on the Air-Conditioner when temperature is higher or equal than 30C. " + "\n" +
+            builder.setMessage("Enable Smart Control to turn on the Air-Conditioner when temperature is higher or equal than the temperature you set " + "\n" +
                     "You can manually control the Air-Conditioner by turning off Smart Control")
 
             //set positive button
@@ -123,7 +123,7 @@ class Temperature_Humidity : AppCompatActivity() {
             builder.setTitle("Smart Control")
 
             //set content area
-            builder.setMessage("Enable Smart Control to turn on the Dehumidifier when humidity is higher or equal than 85%. " + "\n"+
+            builder.setMessage("Enable Smart Control to turn on the Dehumidifier when humidity is higher or equal than the humidity you set. " + "\n"+
                     "You can manually control the Dehumidifier by turning off Smart Control")
 
             //set positive button
