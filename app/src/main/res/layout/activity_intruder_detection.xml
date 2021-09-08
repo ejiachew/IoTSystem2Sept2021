@@ -142,9 +142,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
-                        android:text="2.0"
                         android:textColor="@color/black"
                         android:textSize="18sp"
+                        android:text="2.0M"
                         app:layout_constraintBottom_toBottomOf="@+id/imgView_Distance"
                         app:layout_constraintStart_toEndOf="@+id/imgView_Distance"
                         app:layout_constraintTop_toTopOf="@+id/imgView_Distance"
@@ -157,6 +157,7 @@
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
                         android:max="200"
+                        android:progress="200"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imgView_Distance" />

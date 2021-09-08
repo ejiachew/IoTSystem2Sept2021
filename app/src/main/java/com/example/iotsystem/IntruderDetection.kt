@@ -13,6 +13,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.SeekBar
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -40,6 +41,7 @@ class IntruderDetection : AppCompatActivity() {
     private val notificationID = 101
     private var switchEnable:Boolean = false
 
+
     @RequiresApi(Build.VERSION_CODES.O)
     private val dtf = DateTimeFormatter.ofPattern("yyyyMMdd")
     @RequiresApi(Build.VERSION_CODES.O)
@@ -51,23 +53,17 @@ class IntruderDetection : AppCompatActivity() {
 
     var isNullDetected = false
 
-
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_intruder_detection)
         database = Firebase.database.reference
         val database = Firebase.database
-        val buzzerRef = database.getReference("PI_13__CONTROL").child("buzzer")
-        val lcdTextRef = database.getReference("PI_13__CONTROL").child("lcdtxt")
-        //val relay1Ref = database.getReference("PI_13__CONTROL").child("relay1")
+        //val buzzerRef = database.getReference("PI_13__CONTROL").child("buzzer")
+        //val lcdTextRef = database.getReference("PI_13__CONTROL").child("lcdtxt")
+        val relay1Ref = database.getReference("PI_13__CONTROL").child("relay1")
         val cameraRef = database.getReference("PI_13__CONTROL").child("camera")
         val cameraImgRef = database.getReference("PI_13__CONTROL").child("camera_feedback")
-        binding.imgBtnBack.setOnClickListener(){
-            val intent = Intent(this@IntruderDetection, MainActivity::class.java)
-            finish()
-            startActivity(intent)
-        }
 
         binding.btnCamera.setOnClickListener(){
             cameraRef.setValue("1")
@@ -145,7 +141,7 @@ class IntruderDetection : AppCompatActivity() {
         binding.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
                 var value: Double = p1.toString().toDouble() / 100
-                binding.tvDistanceValue.text =  value.toString()
+                binding.tvDistanceValue.text =  value.toString() + "M"
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {}
@@ -153,19 +149,28 @@ class IntruderDetection : AppCompatActivity() {
         })
 
         binding.swIntruderDetection.setOnCheckedChangeListener{ _, isChecked ->
+
+            var msg=""
+
             if(isChecked){
                 binding.tvSwitchStatus.text = "On"
                 switchEnable = true
-
+                relay1Ref.setValue("1")
+                msg = "Intruder detection turned On"
             }else{
                 switchEnable = false
-                lcdTextRef.setValue("=App is running=")
-                cameraRef.setValue("0")
-                //relay1Ref.setValue("0")
-                cameraImgRef.setValue("None")
-                buzzerRef.setValue("0")
+                //lcdTextRef.setValue("=App is running=")
+                //cameraRef.setValue("0")
+                relay1Ref.setValue("0")
+                //cameraImgRef.setValue("None")
+                //buzzerRef.setValue("0")
+                msg = "Intruder detection turned Off"
                 binding.tvSwitchStatus.text = "Off"
             }
+
+
+            val toast = Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT)
+                toast.show()
         }
         createNotificationChannel()
 
@@ -260,10 +265,10 @@ class IntruderDetection : AppCompatActivity() {
 //                    var valueDistance = binding.tvDistanceValue.text.toString().toDouble()
 
                     var valueSound =  snap.child("rand1").getValue<String>()?.toDouble()
-                    var valueDistance = binding.tvDistanceValue.text.toString().toDouble()
+                    var valueDistance = binding.tvDistanceValue.text.toString().substring(0,3).toDouble()
 
                     if(valueSound != null){
-                        binding.tvSoundValue.text = snap.child("rand1").getValue<String>()
+                        binding.tvSoundValue.text = snap.child("rand1").getValue<String>() + "dB"
                     }else{
                         isNullDetected = true
                         Log.i("newTag","Null Detected : $valueSound")
@@ -279,20 +284,18 @@ class IntruderDetection : AppCompatActivity() {
 
                     if(switchEnable){
                         if (valueSound != null) {
-                            if(valueSound > 70.00 || valueDistance < 0.5){
+                            if(valueSound > 50.00 || valueDistance < 0.5){
                                 buzzerRef.setValue("1")
-                                lcdTextRef.setValue("==Has Intruder==")
-                                //cameraRef.setValue("1")
-                                //relay1Ref.setValue("1")
+                                lcdTextRef.setValue("Intruder Found!!")
                                 sendNotification()
                             }else{
-                                lcdTextRef.setValue("=App is running=")
-                                //cameraRef.setValue("0")
-                                //relay1Ref.setValue("0")
+                                lcdTextRef.setValue("==No condition==")
                                 buzzerRef.setValue("0")
-                                //cameraImgRef.setValue("None")
                             }
                         }
+                    }else{
+                        lcdTextRef.setValue("=App is running=")
+                        buzzerRef.setValue("0")
                     }
 
                     database.getReference("PI_13__CONTROL").get().addOnSuccessListener { snap ->
